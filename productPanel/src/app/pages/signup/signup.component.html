@@ -1,0 +1,25 @@
+
+<div class="signup-container">
+
+ <form (ngSubmit)="signup()" class="signup-form">
+    <h2>فرم ثبت‌نام</h2>
+    <label for="firstName">نام</label>
+    <input id="firstName" [(ngModel)]="user.firstName" name="firstName" required>
+    <label for="lastName">نام خانوادگی</label>
+    <input id="lastName" [(ngModel)]="user.lastName" name="lastName" required>
+    <label for="mobile">شماره تماس</label>
+    <input id="mobile" [(ngModel)]="user.mobile" name="mobile" required>
+    <label for="UserName"> نام کاربری</label>
+    <input id="UserName" [(ngModel)]="user.UserName" name="UserName" required>
+    <label for="password">رمز عبور</label>
+    <input id="password" [(ngModel)]="user.password" name="password" required>
+    <label for="city">شهر خود را انتخاب کنید</label>
+    <select id="city" [(ngModel)]="user.City" name="City" required>
+        <option *ngFor="let city of listsCity" [value]="city">{{city}}</option> 
+    </select> 
+    <button type="submit">ثبت نام</button>
+    <a routerLink="/login">ورود</a>
+</form>
+<div *ngIf="message">{{message}}</div> 
+</div>
+<router-outlet></router-outlet>
